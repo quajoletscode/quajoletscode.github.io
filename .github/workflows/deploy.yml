@@ -1,4 +1,4 @@
-name: Deploy to quajo-king.github.io
+name: Deploy to quajoletscode.github.io
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: Install dependencies
         run: pnpm ci
@@ -30,6 +30,6 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           external_repository: quajo-king/quajo-king.github.io
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
           commit_message: Deploying to GitHub Pages via GitHub Actions 🚀
