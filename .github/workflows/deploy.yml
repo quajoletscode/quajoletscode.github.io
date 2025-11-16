@@ -35,7 +35,7 @@ jobs:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          external_repository: quajoletscode.github.io
+          external_repository: quajoletscode/quajoletscode.github.io
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
           commit_message: Deploying to GitHub Pages via GitHub Actions 🚀
