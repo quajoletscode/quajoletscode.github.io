@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@import "tw-animate-css";
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer theme;
+@layer base;
+@layer components;
+@layer utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility text-body {
+  color: var(--text);
+}
+@utility bg-body {
+  background-color: var(--background);
+}
+
+@layer base {
+  body {
+    @apply bg-body text-body;
+  }
+  #app {
+    height: 100%;
+  }
+}
+
+.light,
+:root {
+  color-scheme: light;
+  --background: var(--color-zinc-100);
+  --text: var(--color-slate-900);
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The .dark class overrides the :root variables */
+.dark {
+  color-scheme: dark;
+  --background: var(--color-slate-800);
+  --text: var(--color-zinc-300);
+}
+@theme {
+  --color-background: var(--background);
+  --color-text: var(--text);
+
+  --default-font-family: "Open Sans", "sans-serif";
+  --color-primary: #004d40;
+  --color-primary-dark: #00332e;
+  --color-primary-light: #336b66;
+  /* custom breakpoint */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 425px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+  --font-size-h1: clamp(2.25rem, 5vw, 4.5rem);
+  --font-size-h2: clamp(2rem, 4.2vw, 3.5rem);
+  --font-size-h3: clamp(1.75rem, 3.5vw, 2.75rem);
+  --font-size-h4: clamp(1.5rem, 2.85vw, 2.25rem);
+  --font-size-h5: clamp(1.25rem, 2.2vw, 1.75rem);
+  --font-size-h6: clamp(1.1rem, 1.85vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 2vw + 1.5rem, 2rem);
+  --font-size-3xl: clamp(1.875rem, 2.5vw + 1.875rem, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 3vw + 2.25rem, 3rem);
+  --font-size-5xl: clamp(2.75rem, 4vw + 2.75rem, 3.5rem);
+  --font-size-6xl: clamp(3.25rem, 5vw + 3.25rem, 4.25rem);
+  --font-size-7xl: clamp(3.75rem, 6vw + 3.75rem, 5rem);
+  --font-size-8xl: clamp(4.25rem, 7vw + 4.25rem, 6rem);
+  --font-size-9xl: clamp(5rem, 8vw + 5rem, 7.5rem);
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(0);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.slide-in-enter-active,
+.slide-in-leave-active {
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  transform: translateX(0);
+}
+
+.slide-in-enter-from,
+.slide-in-leave-to {
+  opacity: 0;
+  transform: translateX(5px);
+  
+}
