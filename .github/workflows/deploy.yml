@@ -18,7 +18,10 @@ jobs:
           node-version: "22"
           cache: 'pnpm' 
       
-      # The pnpm package manager is now available on the path
+      - name: Install pnpm globally (Robust Fix)
+        # ensures pnpm is installed and on the path
+        run: npm install -g pnpm
+
       - name: Install dependencies
         run: pnpm install
 
