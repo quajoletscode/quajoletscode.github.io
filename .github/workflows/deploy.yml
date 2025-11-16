@@ -16,17 +16,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: 'pnpm' 
-      
-      - name: Install pnpm globally (Robust Fix)
-        # ensures pnpm is installed and on the path
-        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build
-        run: pnpm build
+        run: npm run build
 
       - name: Deploy to quajoletscode.github.io repo
         # ... (rest of the deployment step)
