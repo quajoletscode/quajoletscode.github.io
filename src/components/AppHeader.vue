@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { AlignRight, UserIcon } from 'lucide-vue-next';
 import Button from './ui/Button.vue';
-import { ref } from 'vue';
+import LetsCode from './LetsCode.vue';
 
 
 </script>
@@ -10,30 +10,28 @@ import { ref } from 'vue';
   <div class="max-w-7xl mx-auto px-3">
     <div class="flex items-center justify-between">
       <a href="" class="flex gap-4 items-center">
-        <UserIcon :size="28" :stroke-width="2" />
-        <span class="capitalize">
-          quajo letsCode
-        </span>
+        <LetsCode />
       </a>
       <ul class="hidden md:flex flex-row gap-4 items-center">
         <li>
-          <a href="#">
+          <RouterLink to="#">
             Courses
-          </a>
+          </RouterLink>to
         </li>
         <li>
-          <a href="#">
+          <RouterLink to="#">
             Pricing
-          </a>
+          </RouterLink>to
         </li>
         <li>
-          <a href="#">
+          <RouterLink to="#">
             Stack
-          </a>
+          </RouterLink>to
         </li>
       </ul>
       <div class="hidden md:flex items-center gap-3">
-        <Button type="button" as="link" variant="gost" class="capitalize py-1.5">register</Button>
+        <Button type="button" as="link" :to="{ name: 'signup' }" variant="gost"
+          class="capitalize py-1.5">register</Button>
         <Button type="button" variant="primary" class="text-white capitalize py-1.5">enroll now</Button>
       </div>
       <div class="md:hidden ">
