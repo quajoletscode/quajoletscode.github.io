@@ -29,7 +29,7 @@ import Button from './ui/Button.vue';
     <div class="max-w-7xl mx-auto px-3">
       <div class="flex items-center gap-4 flex-wrap md:justify-between justify-center">
         <p class="md:text-start text-center">
-          &COPY; {{ new Date().getFullYear() }} Quajo LetsCode. All rights reserved. Built with <span
+          &COPY; {{ new Date().getFullYear() }} Quajo LetsCode. All rights reserved. Made with <span
             class="text-red-600 text-lg">&hearts;</span> for Developers
         </p>
         <ul class="flex flex-row items-center flex-wrap gap-3">
