@@ -26,35 +26,68 @@ watch(isMenuOpen, (menu) => {
     <AppHeader @toggle-menu="toggleMenu" />
   </header>
   <Transition mode="in-out" name="slide-in">
+<<<<<<< HEAD
     <section v-if="isMenuOpen" @click.self="isMenuOpen = false" class="md:hidden w-full h-full z-55 fixed right-0 top-0"
       :class="{ 'bg-slate-800/30 backdrop-blur-xs': isMenuOpen }">
       <div class="shadow-2xl bg-body h-full max-w-xs float-end rounded-l">
         <div class="flex items-center justify-between py-2 px-3 bg-body shadow rounded-tl">
           <LetsCode/>
+=======
+    <section v-if="isMenuOpen" @click.self="isMenuOpen = false" class="md:hidden @container w-full h-full z-55 fixed right-0 top-0"
+      :class="{ 'bg-slate-800/30 backdrop-blur-xs': isMenuOpen }">
+      <div class="shadow-2xl bg-body h-full w-full max-w-md float-end rounded-l">
+        <div class="flex items-center justify-between py-2 px-6 bg-body shadow shadow-slate-700 rounded-tl">
+          <LetsCode />
+>>>>>>> c6797551d80b8826f42feff548e26c3c8e6625e3
           <Button @click="isMenuOpen = false" type="button" as="button" variant="gost" class="p-1!">
             <XIcon class="" :stroke-width="2" />
           </Button>
         </div>
         <div class="px-3">
+<<<<<<< HEAD
           <ul class="flex flex-col gap-2.5 items-start my-3 w-full">
             <li class="w-full">
               <RouterLink to="/#" class="flex">
+=======
+          <ul class="flex flex-col gap-2.5 items-start my-2 w-full space-y-0">
+            <li class="w-full">
+              <RouterLink to="/#" class="flex hover:bg-slate-400 dark:hover:bg-slate-700 p-3 rounded-md capitalize">
+>>>>>>> c6797551d80b8826f42feff548e26c3c8e6625e3
                 courses
               </RouterLink>
             </li>
             <li class="w-full">
+<<<<<<< HEAD
               <RouterLink to="/#" class="flex">
+=======
+              <RouterLink to="/#" class="flex hover:bg-slate-400 dark:hover:bg-slate-700 p-3 rounded-md capitalize">
+>>>>>>> c6797551d80b8826f42feff548e26c3c8e6625e3
                 pricing
               </RouterLink>
             </li>
             <li class="w-full">
+<<<<<<< HEAD
               <RouterLink to="" class="flex">
+=======
+              <RouterLink to="" class="flex hover:bg-slate-400 dark:hover:bg-slate-700 p-3 rounded-md capitalize">
+>>>>>>> c6797551d80b8826f42feff548e26c3c8e6625e3
                 stack
               </RouterLink>
             </li>
           </ul>
+<<<<<<< HEAD
         </div>
         <div class="sticky top-full px-3">
+=======
+          <div class="flex items-center gap-4 px-3">
+            <Button type="button" as="link" :to="{ name: 'signup' }" variant="gost"
+              class="capitalize py-1.5">register</Button>
+            <Button type="button" variant="primary" class="text-white capitalize py-1.5">enroll now</Button>
+
+          </div>
+        </div>
+        <div class="sticky top-full px-3 py-6">
+>>>>>>> c6797551d80b8826f42feff548e26c3c8e6625e3
           <p class="text-center text-sm">
             &copy; {{ new Date().getFullYear() }} | Quajo LetsCode. All rights reserved.
           </p>
@@ -62,7 +95,11 @@ watch(isMenuOpen, (menu) => {
       </div>
     </section>
   </Transition>
+<<<<<<< HEAD
   <main class="max-w-7xl mx-auto px-3 h-full">
+=======
+  <main class="max-w-7xl mx-auto h-full">
+>>>>>>> c6797551d80b8826f42feff548e26c3c8e6625e3
     <RouterView></RouterView>
   </main>
   <footer class="sticky top-full w-full shadow">
