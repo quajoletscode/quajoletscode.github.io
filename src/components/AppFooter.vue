@@ -18,9 +18,9 @@ import Button from './ui/Button.vue';
       </h2>
       <div class="mt-8 flex lg:mt-0 lg:shrink-0">
         <div class="inline-flex rounded-xl shadow">
-          <Button type="button" variant="gost" as="link" href="#pricing" class="bg-transparent transition-colors">
+          <RouterLink to="#pricing" class="transition-colors border border-teal-400 p-3 rounded-md bg-teal-600">
             Unlock Premium Access
-          </Button>
+          </RouterLink>
         </div>
       </div>
     </div>

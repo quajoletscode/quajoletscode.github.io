@@ -22,7 +22,7 @@ watch(isMenuOpen, (menu) => {
 </script>
 
 <template>
-  <header class="sticky top-0 p-2 md:py-3 bg-body w-full shadow dark:shadow-gray-900 z-50">
+  <header class="sticky top-0 p-2 md:py-3 bg-body w-full shadow dark:border-b dark:border-primary dark:shadow-gray-900 z-50">
     <AppHeader @toggle-menu="toggleMenu" />
   </header>
   <Transition mode="in-out" name="slide-in">
@@ -68,7 +68,7 @@ watch(isMenuOpen, (menu) => {
       </div>
     </section>
   </Transition>
-  <main class="max-w-7xl mx-auto h-full">
+  <main class="mx-auto h-full">
     <RouterView></RouterView>
   </main>
   <footer class="sticky top-full w-full shadow">

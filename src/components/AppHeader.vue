@@ -1,7 +1,7 @@
 <script setup lang='ts'>
-import { AlignRight, UserIcon } from 'lucide-vue-next';
-import Button from './ui/Button.vue';
-import LetsCode from './LetsCode.vue';
+  import { AlignRight } from 'lucide-vue-next';
+  import Button from './ui/Button.vue';
+  import LetsCode from './LetsCode.vue';
 
 
 </script>
@@ -16,17 +16,17 @@ import LetsCode from './LetsCode.vue';
         <li>
           <RouterLink to="#">
             Courses
-          </RouterLink>to
+          </RouterLink>
         </li>
         <li>
           <RouterLink to="#">
             Pricing
-          </RouterLink>to
+          </RouterLink>
         </li>
         <li>
           <RouterLink to="#">
             Stack
-          </RouterLink>to
+          </RouterLink>
         </li>
       </ul>
       <div class="hidden md:flex items-center gap-3">
