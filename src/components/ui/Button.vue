@@ -7,7 +7,7 @@ type Types = 'button' | 'submit' | 'reset' | undefined;
 
 type As = 'link' | 'a' | 'button' | undefined;
 
-type Variants = 'light' | 'primary' | 'none' | 'blue' | 'danger' | 'red' | 'warning' | 'green' | 'info' | 'gost' | undefined | null;
+type Variants = 'light' | 'primary' | 'none' | 'blue' | 'danger' | 'red' | 'warning' | 'green' | 'info' | 'gost' | undefined;
 
 interface Button {
   variant?: Variants,

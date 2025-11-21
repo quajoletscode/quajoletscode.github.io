@@ -1,12 +1,9 @@
 <script setup lang='ts'>
-import FacebookIcon from './icons/FacebookIcon.vue';
-import GithubIcon from './icons/GithubIcon.vue';
-import TiktokIcon from './icons/TiktokIcon.vue';
-import WhatsAppIcon from './icons/WhatsAppIcon.vue';
-import YouTubeIcon from './icons/YouTubeIcon.vue';
-import Button from './ui/Button.vue';
-
-
+  import FacebookIcon from './icons/FacebookIcon.vue';
+  import GithubIcon from './icons/GithubIcon.vue';
+  import TiktokIcon from './icons/TiktokIcon.vue';
+  import WhatsAppIcon from './icons/WhatsAppIcon.vue';
+  import YouTubeIcon from './icons/YouTubeIcon.vue';
 </script>
 
 <template>
@@ -18,14 +15,15 @@ import Button from './ui/Button.vue';
       </h2>
       <div class="mt-8 flex lg:mt-0 lg:shrink-0">
         <div class="inline-flex rounded-xl shadow">
-          <RouterLink to="#pricing" class="transition-colors border border-teal-400 p-3 rounded-md bg-teal-600">
+          <RouterLink :to="{ name: 'signup' }"
+            class="transition-colors border border-teal-400 p-3 rounded-md bg-teal-600">
             Unlock Premium Access
           </RouterLink>
         </div>
       </div>
     </div>
   </div>
-  <div class="bg-slate-800 text-zinc-300 lg:py-6 py-4 px-2">
+  <div class="bg-slate-800 text-zinc-300 lg:py-10 py-6 px-2">
     <div class="max-w-7xl mx-auto px-3">
       <div class="flex items-center gap-4 flex-wrap md:justify-between justify-center">
         <p class="md:text-start text-center">
@@ -34,12 +32,14 @@ import Button from './ui/Button.vue';
         </p>
         <ul class="flex flex-row items-center flex-wrap gap-3">
           <li>
-            <a target="_blank" href="https://github.com/quajoletscode" title="Github" class="bg-gray-600 p-2.5 rounded-md flex">
+            <a target="_blank" href="https://github.com/quajoletscode" title="Github"
+              class="bg-gray-600 p-2.5 rounded-md flex">
               <GithubIcon class="text-white" />
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.facebook.com/quajoletscode" title="Facebook" class="bg-gray-600 p-2.5 rounded-md flex">
+            <a target="_blank" href="https://www.facebook.com/quajoletscode" title="Facebook"
+              class="bg-gray-600 p-2.5 rounded-md flex">
               <FacebookIcon class="text-slate-50" />
             </a>
           </li>
@@ -49,13 +49,15 @@ import Button from './ui/Button.vue';
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://whatsapp.com/channel/0029Vb6sl97CMY09TqAGLD26" title="WhatsApp" class="bg-gray-600 p-2.5 rounded-md flex">
+            <a target="_blank" href="https://whatsapp.com/channel/0029Vb6sl97CMY09TqAGLD26" title="WhatsApp"
+              class="bg-gray-600 p-2.5 rounded-md flex">
               <WhatsAppIcon class="text-slate-50" />
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://youtube.com/@quajoletscode?si=F3Kf-v43KyDts6SV" class="bg-gray-600 p-2.5 rounded-md flex">
-              <YouTubeIcon class="text-slate-50"/>
+            <a target="_blank" href="https://youtube.com/@quajoletscode?si=F3Kf-v43KyDts6SV"
+              class="bg-gray-600 p-2.5 rounded-md flex">
+              <YouTubeIcon class="text-slate-50" />
             </a>
           </li>
         </ul>

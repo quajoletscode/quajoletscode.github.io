@@ -25,6 +25,9 @@
 }
 
 @layer base {
+  html{
+    @apply  h-dvh;
+  }
   body {
     @apply bg-body text-body;
   }

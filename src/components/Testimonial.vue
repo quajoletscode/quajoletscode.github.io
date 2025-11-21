@@ -23,9 +23,9 @@
      const props = defineProps<Props>();
 </script>
 <template>
-     <div class="bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-xl border-t-4 border-accent-teal">
+     <div class="bg-white relative dark:bg-slate-700 p-8 rounded-2xl shadow-xl border-t-4 border-slate-500/70">
           <p class="italic">
-               {{ props.message }}
+               "{{ props.message }}"
           </p>
           <div class="mt-6 flex items-center">
                <img class="h-10 w-10 rounded-full object-cover" :src="props.avatar ? props.avatar : userAvatar()"

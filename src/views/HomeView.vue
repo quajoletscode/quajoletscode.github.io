@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import mockupImage from "@/assets/code.mockup.png";
+  import Testimonial from "@/components/Testimonial.vue";
   import { RouterLink } from "vue-router";
 </script>
 
@@ -16,7 +17,7 @@
         <div class="text-center lg:text-left lg:col-span-6 xl:col-span-6">
           <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
             <span class="block xl:inline">Your Full Roadmap to </span>
-            <span class="block text-primary-indigo xl:inline">Full-Stack Mastery.</span>
+            <span class="block  xl:inline">Full-Stack Mastery.</span>
           </h1>
           <p class="mt-3 max-w-md mx-auto text-basesm:text-lg md:mt-5 md:text-xl lg:text-base xl:text-xl lg:mx-0">
             Go from zero to a job-ready developer focusing on modern Laravel, PHP, and the core
@@ -25,20 +26,21 @@
           <div
             class="mt-8 md:max-w-lg md:mx-auto sm:text-center lg:text-left lg:mx-0 lg:flex lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
             <!-- Primary CTA: Free Course -->
-            <RouterLink to="#courses"
-              class="w-full lg:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-accent-teal bg-teal-500 md:py-4 md:text-lg md:px-10 shadow-lg transition-all transform hover:scale-[1.02] duration-300">
+            <router-link to="/#pricing"
+              class="w-full lg:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-white font-medium rounded-xl bg-accent-teal bg-teal-500 hover:bg-teal-600 md:py-4 md:text-lg md:px-10 shadow-lg transition-all transform hover:scale-[1.02] duration-300">
               Start Free Front-End Course
-            </RouterLink>
+            </router-link>
             <!-- Secondary CTA: Premium/Stack -->
-            <RouterLink to="#stack"
-              class="w-full lg:w-auto flex items-center justify-center px-8 py-3 border border-primary-indigo text-base font-medium rounded-xl text-primary-indigo bg-white hover:bg-indigo-50 md:py-4 md:text-lg md:px-10 shadow-md transition-all duration-300">
+            <RouterLink :to="{ name: 'login' }"
+              class="w-full lg:w-auto flex items-center justify-center px-8 py-3 border border-slate-200 dark:border-slate-600 font-medium rounded-xl text-primary bg-white hover:text-white hover:bg-slate-700 md:py-4 md:text-lg md:px-10 shadow-md transition-colors duration-300">
               Explore Full-Stack Track
             </RouterLink>
           </div>
         </div>
         <!-- Mockup Image/Illustration -->
         <div class="mt-12 lg:mt-0 lg:col-span-6 xl:col-span-6 rounded-xl bg-none bg-blend-lighten">
-          <img class="w-full max-w-2xl mx-auto rounded-xl shadow-2xl object-cover h-full" :src="mockupImage"
+          <img @contextmenu.prevent @drag.prevent @copy.prevent @dragstart.prevent @dragover.prevent
+            class="w-full max-w-2xl mx-auto rounded-xl shadow-2xl object-cover h-full" :src="mockupImage"
             alt="Professional web development code screen mockup" />
         </div>
       </div>
@@ -46,14 +48,14 @@
   </section>
 
   <!-- 2. Tech Stack Focus (Why Laravel?) -->
-  <section id="stack" class="py-16 sm:py-24 dark:bg-slate-900">
+  <section id="stack" class="py-16 sm:py-24 bg-slate-400 dark:bg-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="lg:text-center">
         <h2 class="text-base text-accent-teal font-semibold tracking-wide uppercase">
           The Modern Backend
         </h2>
         <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
-          Become a Certified <span class="text-primary-indigo">Laravel</span> Expert.
+          Become a <span class="text-emerald-200">Laravel</span> Expert.
         </p>
         <p class="mt-4 max-w-2xl lg:mx-auto">
           We don't just teach theory. We specialize in building real-world applications using the
@@ -65,7 +67,7 @@
         <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
           <!-- Feature 1: Laravel -->
           <div
-            class="flex flex-col p-6 bg-white dark:bg-slate-700 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
+            class="flex flex-col p-6 relative bg-white dark:bg-slate-700 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
             <div class="shrink-0">
               <span class="h-10 w-10 flex items-center justify-center rounded-full bg-red-100 text-red-600">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,7 +87,7 @@
 
           <!-- Feature 2: Full-Stack Integration -->
           <div
-            class="flex flex-col p-6 bg-white dark:bg-slate-700 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
+            class="flex flex-col p-6 relative bg-white dark:bg-slate-700 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
             <div class="shrink-0">
               <span class="h-10 w-10 flex items-center justify-center rounded-full hover:dark:bg-slate-700 border">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -98,14 +100,14 @@
               <dt class="text-lg leading-6 font-medium">Seamless Integration</dt>
               <dd class="mt-2 text-base">
                 Master the transition from Front-End (Vue/React) to Back-End endpoints using Inertia
-                and Livewire.
+                and Livewire or REST API.
               </dd>
             </div>
           </div>
 
           <!-- Feature 3: Career Ready -->
           <div
-            class="flex flex-col p-6 bg-white dark:bg-slate-700 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
+            class="flex flex-col p-6 relative bg-white dark:bg-slate-700 rounded-xl shadow-lg transform hover:scale-[1.02] transition duration-300">
             <div class="shrink-0">
               <span class="h-10 w-10 flex items-center justify-center rounded-full bg-accent-teal">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -134,10 +136,10 @@
         <h2 class="text-3xl font-extrabold sm:text-4xl">Choose Your Path to Code Mastery</h2>
       </div>
 
-      <div class="mt-12 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
+      <div class="mt-12 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 gap-4 lg:gap-8">
         <!-- FREE Front-End Fundamentals -->
         <div
-          class="bg-gray-50 dark:bg-slate-700 border border-gray-200 dark:border-gray-600 rounded-3xl shadow-xl p-8 flex flex-col justify-between transform transition duration-500 hover:shadow-2xl">
+          class="bg-body relative dark:bg-slate-700 border border-gray-200 dark:border-gray-600 rounded-3xl shadow p-8 flex flex-col justify-between transform transition duration-500 hover:shadow-lg">
           <div class="flex-1">
             <h3 class="text-2xl font-bold">Front-End Fundamentals</h3>
             <p class="mt-4">
@@ -179,78 +181,19 @@
                   viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-                <span class="ml-3 line-through">Full-Stack Laravel Track Access</span>
+                <span class="ml-3 line-through">Full-Stack PHP(Laravel) Track Access</span>
               </li>
             </ul>
           </div>
 
-          <RouterLink to="#"
-            class="mt-8 block w-full bg-accent-teal border border-transparent rounded-xl py-3 text-center font-medium text-white bg-teal-500 shadow-md transition-colors">
+          <RouterLink :to="{ name: 'free-courses.frontend' }" title="Access free frontend courses"
+            class="mt-8 block w-full bg-accent-teal border border-transparent rounded-xl py-3 text-center font-medium text-white bg-teal-500 hover:bg-teal-600 shadow-md transition-colors">
             Access Free Course
-          </RouterLink>
-        </div>
-
-        <!-- Full-Stack Laravel Career Track -->
-        <div
-          class="hover:dark:bg-slate-700 border-0 rounded-3xl shadow-2xl p-8 flex flex-col justify-between scale-[1.05] relative transform transition duration-500 hover:scale-[1.07]">
-          <div
-            class="absolute -top-3 right-6 px-4 py-1 bg-accent-teal rounded-full text-sm font-bold bg-amber-300 text-white shadow-xl">
-            Best Value
-          </div>
-          <div class="flex-1">
-            <h3 class="text-2xl font-bold text-white">Full-Stack Development</h3>
-            <p class="mt-4 text-indigo-200">
-              The complete professional curriculum, designed to get you hired building modern web
-              applications.
-            </p>
-            <p class="mt-6 text-4xl font-extrabold text-white">
-              $6/mo
-              <span class="ml-1 text-base font-medium text-indigo-200">/ billed monthly</span>
-            </p>
-          </div>
-
-          <div class="mt-8">
-            <h4 class="text-lg font-semibold text-white mb-4">Everything in Free, plus:</h4>
-            <ul role="list" class="space-y-4 text-indigo-200">
-              <li class="flex items-start">
-                <svg class="shrink-0 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="ml-3 text-white font-medium">In-depth Laravel (Routing, Eloquent, MVC)</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="shrink-0 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="ml-3">Database Management (MySQL/PostgreSQL)</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="shrink-0 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="ml-3">Project Deployments & DevOps Basics</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="shrink-0 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="ml-3">Direct Mentor Q&A / Exclusive Community</span>
-              </li>
-            </ul>
-          </div>
-
-          <RouterLink to="#"
-            class="mt-8 block w-full dark:bg-white text-slate-800 hover:bg-teal-400 hover:text-slate-50 border border-transparent rounded-xl py-3 text-center font-medium text-primary-indigo shadow-xl transition-colors">
-            Upgrade to Full-Stack
           </RouterLink>
         </div>
         <!-- Free Backend Basics -->
         <div
-          class="bg-gray-50 dark:bg-slate-700 border border-gray-200 dark:border-gray-600 rounded-3xl shadow-xl p-8 flex flex-col justify-between transform transition duration-500 hover:shadow-2xl">
+          class="bg-body relative dark:bg-slate-700 border border-gray-200 dark:border-gray-600 rounded-3xl shadow p-8 flex flex-col justify-between transform transition duration-500 hover:shadow-lg">
           <div class="flex-1">
             <h3 class="text-2xl font-bold">Backend Fundamentals</h3>
             <p class="mt-4">
@@ -297,72 +240,83 @@
             </ul>
           </div>
 
-          <RouterLink to="#"
-            class="mt-8 block w-full bg-accent-teal border border-transparent rounded-xl py-3 text-center font-medium text-white bg-teal-500 shadow-md transition-colors">
+          <RouterLink :to="{ name: 'free-courses.backend' }" title="Access free backend courses"
+            class="mt-8 block w-full bg-accent-teal border border-transparent rounded-xl py-3 text-center font-medium bg-emerald-700 hover:bg-emerald-800 text-white shadow-md transition-colors">
             Access Free Course
           </RouterLink>
         </div>
+        <!-- Full-Stack Laravel Career Track -->
+        <div
+          class="bg-body relative dark:bg-slate-700 border border-gray-200 dark:border-gray-600 rounded-3xl shadow p-8 flex flex-col justify-between transform transition duration-500 hover:shadow-lg">
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold">Full-Stack Development</h3>
+            <p class="mt-4 dark:text-indigo-200">
+              The complete professional curriculum, designed to get you hired building modern web
+              applications.
+            </p>
+            <p class="mt-6 text-4xl font-extrabold">
+              $10/mo
+              <span class="ml-1 text-base font-medium dark:text-indigo-200">/ billed monthly</span>
+            </p>
+          </div>
+
+          <div class="mt-8">
+            <h4 class="text-lg font-semibold mb-4">Everything in Free, plus:</h4>
+            <ul role="list" class="space-y-4 dark:text-indigo-200">
+              <li class="flex items-start">
+                <svg class="shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3 font-medium">In-depth Laravel (Routing, Eloquent, MVC)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Database Management (SQL/MySQL)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Project Deployments & DevOps Basics</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="ml-3">Direct Mentor Q&A / Exclusive Community</span>
+              </li>
+            </ul>
+          </div>
+
+          <RouterLink :to="{ name: 'full-stack' }" title="Upgrade to full-stack track"
+            class="mt-8 block w-full dark:text-white bg-primary hover:bg-primary-dark text-white hover:text-slate-50 border border-transparent rounded-xl py-3 text-center font-medium  shadow-xl transition-colors">
+            Upgrade to Full-Stack
+          </RouterLink>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- 4. Testimonials & Social Proof -->
-  <section class="py-16 sm:py-24">
+  <section class="py-10 md:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h2 class="text-3xl font-extrabold sm:text-4xl">Hear From Our Successful Students</h2>
       </div>
       <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
         <!-- Testimonial 1 -->
-        <div class="bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-xl border-t-4 border-teal-200">
-          <p class="italic">
-            "The free course got me my first freelance gig, and the Laravel track gave me the
-            confidence to build a real business application. Quajo is the best roadmap out there."
-          </p>
-          <div class="mt-6 flex items-center">
-            <img class="h-10 w-10 rounded-full object-cover" src="https://placehold.co/40x40/20B2AA/FFFFFF?text=A"
-              alt="Avatar A" />
-            <div class="ml-4">
-              <p class="text-base font-medium">Alex J.</p>
-              <p class="text-sm text-accent-teal">Front-End Developer</p>
-            </div>
-          </div>
-        </div>
+        <Testimonial v-for="i in 3" :key="i" message="The free course got me my first freelance gig, and the Laravel track gave me the
+            confidence to build a real business application. Quajo is the best roadmap out there." user="Carl Johnson"
+          role="frontend developer" />
 
-        <!-- Testimonial 2 -->
-        <div class="bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-xl border-t-4 border-teal-200">
-          <p class="italic">
-            "I wasted months with scattered tutorials. Quajo's structured, career-focused approach
-            with Laravel finally made everything click. Highly recommend the Full-Stack track!"
-          </p>
-          <div class="mt-6 flex items-center">
-            <img class="h-10 w-10 rounded-full object-cover" src="https://placehold.co/40x40/4F46E5/FFFFFF?text=S"
-              alt="Avatar B" />
-            <div class="ml-4">
-              <p class="text-base font-medium">Sarah M.</p>
-              <p class="text-sm text-primary-indigo">Full-Stack Engineer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="bg-white dark:bg-slate-700 p-8 rounded-2xl shadow-xl border-t-4 border-teal-200">
-          <p class="italic">
-            "The hands-on projects were the game-changer. I built a complete e-commerce platform
-            using their templates and guidance. Excellent value for the price."
-          </p>
-          <div class="mt-6 flex items-center">
-            <img class="h-10 w-10 rounded-full object-cover" src="https://placehold.co/40x40/9CA3AF/FFFFFF?text=M"
-              alt="Avatar C" />
-            <div class="ml-4">
-              <p class="text-base font-medium">Miguel R.</p>
-              <p class="text-sm text-gray-600">Web Entrepreneur</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 </template>
-
-

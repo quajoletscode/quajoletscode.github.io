@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <RouterLink to="#" class="capitalize font-bold tracking-wide">
+  <RouterLink to="/" class="capitalize font-bold tracking-wide">
     <span class="text-emerald-400">
       quajo
     </span>

@@ -5,7 +5,7 @@ import AppLayout from "@/views/layout/AppLayout.vue";
 
 declare module "vue-router" {
   interface RouteMeta {
-    title?: string; 
+    title?: string;
     requiresAuth?: boolean;
   }
 }
@@ -13,6 +13,8 @@ const appName = import.meta.env.VITE_APP_NAME ?? "Quajo LetsCode";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  linkActiveClass: '',
+  linkExactActiveClass: '',
   routes: [
     {
       path: "/",
@@ -26,6 +28,40 @@ const router = createRouter({
           path: "/",
           component: HomeView,
         },
+        {
+          path: "/free-courses",
+          name: "free-courses",
+          component: () => import("@/views/FreeCoursesView.vue"),
+          meta: {
+            title: "Free Courses | " + appName,
+          },
+          children: [
+            {
+              path: "backend",
+              name: "free-courses.backend",
+              component: () => import("@/views/BackendCourseView.vue"),
+              meta: {
+                title: "Backend Free Courses | " + appName,
+              },
+            },
+            {
+              path: "frontend",
+              name: "free-courses.frontend",
+              component: () => import("@/views/FreeCoursesView.vue"),
+              meta: {
+                title: "Frontend Free Courses | " + appName,
+              },
+            },
+          ],
+        },
+        {
+          path: "full-stack",
+          name: "full-stack",
+          component: () => import("@/views/FullStackCourseView.vue"),
+          meta: {
+            title: "Full Stack Course | " + appName,
+          },
+        }
       ],
     },
     {
@@ -54,25 +90,24 @@ const router = createRouter({
       ],
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if(to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 });
-
-// router.beforeEach((to, from, next) => {
-//   const authStore = useAuthStore();
-
-//   if (to.name !== 'login') {
-//     document.querySelector('#app').classList.remove('d-flex', 'justify-content-center', 'align-items-center', 'align-content-center', 'vh-100', 'auth');
-//   }
-//   if (authStore.isAuthenticated && to.name === 'login') next({ name: 'menu' })
-//   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
-//     next({ name: 'login' });
-//   } else {
-//     next();
-//   }
-// });
 
 router.afterEach((to) => {
   if (typeof to.meta.title === "string" && to.meta.title.length > 0) {
     document.title = to.meta.title;
-  } 
+  }
 });
 export default router;
